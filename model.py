@@ -113,10 +113,7 @@ class Model:
 
     if self.sample_output:
       h = sample(h)
-
     return h
-
-
 
   def set_model_params(self, model_params):
     pointer = 0
@@ -169,7 +166,7 @@ def evaluate(model):
 def compress_input_dct(obs):
   new_obs = np.zeros((8, 8))
   for i in range(obs.shape[2]):
-    new_obs = +compress_2d(obs[:, :, i] / 255., shape=(8, 8))
+    new_obs = + compress_2d(obs[:, :, i] / 255., shape=(8, 8))
   new_obs /= float(obs.shape[2])
   return new_obs.flatten()
 
